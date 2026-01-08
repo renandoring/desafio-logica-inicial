@@ -35,7 +35,13 @@ function calculateHeroLevel() {
             `<h2>Resultado:</h2>
              <p>O herói <strong>${getNameHero}</strong> está no nível <strong>${nivel}</strong></p>`;
     });
+
+    // Função Resetar - CORRIGIDA DE VERDADE
+    document.getElementById('resetBtn').addEventListener('click', function () {
+        document.getElementById('heroForm').reset();
+        document.getElementById('result').innerHTML = "";
+    });
 }
 
-//Call the function
-window.onload = calculateHeroLevel;
+    //Call the function
+    window.onload = calculateHeroLevel;

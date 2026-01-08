@@ -161,6 +161,48 @@ button[type="submit"]::after {
     font-size: 1.8rem;
 }
 
+
+/* Botão lendário */
+button[type="button"] {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 50%, #8e44ad 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+button[type="button"]:hover {
+    background: linear-gradient(135deg, #9b59b6 0%, #2980b9 50%, #9b59b6 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(52, 152, 219, 0.5);
+}
+
+button[type="button"]:active {
+    transform: translateY(-1px);
+}
+
+button[type="button"]::after {
+    content: '⚔️';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+}
+
 /* Área de resultado - Estilo escudo */
 #result {
     background: rgba(30, 30, 60, 0.9);
