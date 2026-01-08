@@ -1,0 +1,267 @@
+/* CSS LENDÁRIO - TEMA DE RPG/FANTASIA */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', 'Georgia', serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0c0c20 0%, #1a1a2e 50%, #16213e 100%);
+    color: #f0f0f0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de partículas mágicas no background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(94, 23, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(235, 64, 52, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+    z-index: -2;
+    animation: pulse 15s infinite alternate;
+}
+
+/* Efeito de brilho mágico */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Título épico com efeito de brilho */
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #ffd700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.7),
+        0 0 20px rgba(255, 215, 0, 0.5),
+        0 0 30px rgba(255, 215, 0, 0.3);
+    letter-spacing: 3px;
+    position: relative;
+    padding-bottom: 1rem;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5); }
+    100% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.7), 0 0 35px rgba(255, 215, 0, 0.5); }
+}
+
+/* Formulário estilo pergaminho */
+#heroForm {
+    background: rgba(20, 20, 40, 0.8);
+    border: 2px solid #4a235a;
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 0 30px rgba(106, 13, 173, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+#heroForm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #8e44ad, #3498db, #2ecc71);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: #bb86fc;
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.8rem;
+    background: rgba(10, 10, 25, 0.9);
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+    background: rgba(15, 15, 35, 0.95);
+}
+
+/* Botão lendário */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 50%, #8e44ad 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #9b59b6 0%, #2980b9 50%, #9b59b6 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(52, 152, 219, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+button[type="submit"]::after {
+    content: '⚔️';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+}
+
+/* Área de resultado - Estilo escudo */
+#result {
+    background: rgba(30, 30, 60, 0.9);
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 
+        0 0 40px rgba(255, 215, 0, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#result h2 {
+    color: #ffd700;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+#result p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+#result strong {
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+/* Cores específicas para cada nível */
+#result .Ferro { color: #95a5a6; }
+#result .Bronze { color: #cd7f32; }
+#result .Prata { color: #c0c0c0; }
+#result .Ouro { color: #ffd700; }
+#result .Platina { color: #e5e4e2; }
+#result .Ascendente { color: #9b59b6; }
+#result .Imortal { color: #1abc9c; }
+#result .Radiante { 
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5500, 0 0 30px #ffaa00;
+}
+
+/* Efeitos de borda mágica */
+#result::before, #result::after {
+    content: '✦';
+    position: absolute;
+    color: #ffd700;
+    font-size: 2rem;
+}
+
+#result::before {
+    top: 10px;
+    left: 10px;
+}
+
+#result::after {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Elementos decorativos de tema de jogo */
+.decoration {
+    position: fixed;
+    font-size: 1.5rem;
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 20s infinite linear;
+}
+
+.decoration:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.decoration:nth-child(2) { top: 20%; right: 10%; animation-delay: -5s; }
+.decoration:nth-child(3) { bottom: 30%; left: 15%; animation-delay: -10s; }
+.decoration:nth-child(4) { bottom: 15%; right: 20%; animation-delay: -15s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    #heroForm {
+        padding: 1.5rem;
+    }
+    
+    #result p {
+        font-size: 1.5rem;
+    }
+}
